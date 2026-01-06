@@ -1,46 +1,46 @@
-import { useTranslation, Trans } from "react-i18next";
-import content from "../../content/content";
-import IconFeatureCard from "../cards/IconFeatureCard";
-import SectionArea from "../sectionElements/SectionArea";
-import SectionHeader from "../sectionElements/SectionHeader";
-import SectionWrapper from "../sectionElements/SectionWrapper";
-import MotionDivDownToUp from "../animation/MotionDivDownToUp";
+import { useTranslation, Trans } from 'react-i18next'
+import content from '../../content/content'
+import IconFeatureCard from '../cards/IconFeatureCard'
+import SectionArea from '../sectionElements/SectionArea'
+import SectionHeader from '../sectionElements/SectionHeader'
+import SectionWrapper from '../sectionElements/SectionWrapper'
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
 
 export default function Features6cards({ colorMode }) {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const bgClasses = {
-    dark: "bg-bgSectionOpacityDark",
-    light: "bg-bgSectionOpacityLight",
-    default: "squares",
-  };
+    dark: 'bg-bgSectionOpacityDark',
+    light: 'bg-bgSectionOpacityLight',
+    default: 'squares',
+  }
   const textClasses = {
-    dark: "text-white",
-    light: "text-secondary",
-    default: "text-black",
-  };
-  const bgClass = bgClasses[colorMode] || bgClasses.default;
-  const textClass = textClasses[colorMode] || textClasses.default;
+    dark: 'text-white',
+    light: 'text-secondary',
+    default: 'text-black',
+  }
+  const bgClass = bgClasses[colorMode] || bgClasses.default
+  const textClass = textClasses[colorMode] || textClasses.default
 
-  const cardNumbers = [1, 2, 3, 4, 5, 6];
+  const cardNumbers = [1, 2, 3, 4, 5, 6]
 
   // Função para renderizar título, usando Trans para o card6
   const renderTitle = (i) => {
     if (i === 6) {
       return (
         <Trans i18nKey={`features.card${i}.title`} components={{ i: <i /> }} />
-      );
+      )
     }
-    return t(`features.card${i}.title`);
-  };
+    return t(`features.card${i}.title`)
+  }
 
   return (
     <SectionArea id="service" className={`${bgClass}`}>
       <SectionHeader
         className={`text-center mb-[26px] tablet1:mb-[40px] desktop1:mb-[72px] ${textClass}`}
-        miniTitle={t("features.miniTag")}
-        sectionHeaderTitle={t("features.title")}
-        sectionHeaderSubtitle={t("features.subtitle")}
+        miniTitle={t('features.miniTag')}
+        sectionHeaderTitle={t('features.title')}
+        sectionHeaderSubtitle={t('features.subtitle')}
         titleColorSet={textClass}
         subtitleColorSet={textClass}
       />
@@ -55,7 +55,7 @@ export default function Features6cards({ colorMode }) {
                   title={renderTitle(i)}
                   paragraph={t(`features.card${i}.subtitle`)}
                   className={
-                    i === 1 ? "tablet1:mb-[26px] desktop1:mb-0" : undefined
+                    i === 1 ? 'tablet1:mb-[26px] desktop1:mb-0' : undefined
                   }
                   colorMode={colorMode}
                 />
@@ -67,7 +67,7 @@ export default function Features6cards({ colorMode }) {
             <img
               src={content.texts.features.imgFeatures}
               alt={content.texts.features.alt}
-              className="hidden desktop1:flex h-[900px] w-full rounded-2xl shadow-custom-opacity shadow-primary/50 object-cover"
+              className="hidden desktop1:flex h-[1050px] w-full rounded-2xl shadow-custom-opacity shadow-primary/50 object-cover"
             />
           </MotionDivDownToUp>
 
@@ -77,7 +77,7 @@ export default function Features6cards({ colorMode }) {
                 key={i}
                 className={
                   i === 4
-                    ? "flex items-center w-full tablet1:w-[290px] desktop1:w-[250px]"
+                    ? 'flex items-center w-full tablet1:w-[290px] desktop1:w-[250px]'
                     : undefined
                 }
               >
@@ -85,8 +85,9 @@ export default function Features6cards({ colorMode }) {
                   icon={content.texts.features[`card${i}`].icon}
                   title={renderTitle(i)}
                   paragraph={t(`features.card${i}.subtitle`)}
+                  description={t(`features.card${i}.description`)}
                   className={
-                    i === 4 ? "tablet1:mb-[26px] desktop1:mb-0" : undefined
+                    i === 4 ? 'tablet1:mb-[26px] desktop1:mb-0' : undefined
                   }
                   colorMode={colorMode}
                 />
@@ -96,5 +97,5 @@ export default function Features6cards({ colorMode }) {
         </div>
       </SectionWrapper>
     </SectionArea>
-  );
+  )
 }
