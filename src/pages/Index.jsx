@@ -1,43 +1,43 @@
-import Faq from '../components/sections/Faq'
-import Hero from '../components/sections/Hero'
-import About from '../components/sections/About'
-import Steps from '../components/sections/Steps'
-import Features from '../components/sections/Features'
-import Navbar from '../components/sections/NavbarSocial'
-import FooterSocial from '../components/sections/FooterSocial'
-import AboutInstagram from '../components/sections/AboutInstagram'
-import BackToTopButton from '../components/interactives/BackToTopButton'
-import FloatingWhatsappButton from '../components/interactives/FloatingWhatsappButton'
-import Maps from '../components/sections/Maps'
-import BlogPosts from '../components/sections/BlogPosts'
-import CtaSecondary from '../components/sections/CtaSecondary'
-import { useTranslation } from 'react-i18next'
-import './../i18n'
-import Button from '../components/interactives/Button'
-import UnderConstruction from '../components/interactives/UnderConstruction'
-import { useColorMode } from '../assets/context/ColorModeContext'
-import News from '../components/sections/News'
-import Testimonial from '../components/sections/lp01/Testimonials'
-import Team from '../components/sections/Team'
+import Faq from "../components/sections/Faq";
+import Hero from "../components/sections/Hero";
+import About from "../components/sections/About";
+import Steps from "../components/sections/Steps";
+import Features from "../components/sections/Features";
+import Navbar from "../components/sections/NavbarSocial";
+import FooterSocial from "../components/sections/FooterSocial";
+import AboutInstagram from "../components/sections/AboutInstagram";
+import BackToTopButton from "../components/interactives/BackToTopButton";
+import FloatingWhatsappButton from "../components/interactives/FloatingWhatsappButton";
+import Maps from "../components/sections/Maps";
+import BlogPosts from "../components/sections/BlogPosts";
+import CtaSecondary from "../components/sections/CtaSecondary";
+import { useTranslation } from "react-i18next";
+import "./../i18n";
+import Button from "../components/interactives/Button";
+import UnderConstruction from "../components/interactives/UnderConstruction";
+import { useColorMode } from "../assets/context/ColorModeContext";
+import News from "../components/sections/News";
+import Testimonial from "../components/sections/lp01/Testimonials";
+import Team from "../components/sections/Team";
 
 export default function Index() {
-  const showUnderConstruction = false
+  const showUnderConstruction = false;
 
-  const { colorMode, setColorMode } = useColorMode()
-  const { t, i18n } = useTranslation()
+  const { colorMode, setColorMode } = useColorMode();
+  const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng)
-  }
+    i18n.changeLanguage(lng);
+  };
 
   if (showUnderConstruction) {
-    return <UnderConstruction />
+    return <UnderConstruction />;
   }
 
   return (
     <>
-      {/* <div className="fixed inset-x-0 bottom-5 flex justify-center z-50 pointer-events-none">
-        <div className="flex gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg pointer-events-auto">
+      {/* <div className="fixed inset-x-0 z-50 flex justify-center pointer-events-none bottom-5">
+        <div className="flex gap-4 p-4 bg-white rounded-lg shadow-lg pointer-events-auto dark:bg-gray-800">
           <Button
             label="English"
             size="small"
@@ -79,7 +79,7 @@ export default function Index() {
       {/* <Team /> */}
       <CtaSecondary colorMode={colorMode} />
       <Steps colorMode={colorMode} />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <BlogPosts />
       <Faq colorMode={colorMode} />
       {/* <Maps colorMode={colorMode} /> */}
@@ -92,5 +92,5 @@ export default function Index() {
       <FloatingWhatsappButton />
       <BackToTopButton />
     </>
-  )
+  );
 }
